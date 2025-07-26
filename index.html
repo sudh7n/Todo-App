@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ToDoS</title>
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>ToDoS</h1>
+    <section class="welcome-container">
+      <img src="./images/icon.png" alt="" />
+      <div>
+        <h2>Welcome, Username</h2>
+        <p>
+          Ready to stay on top of things? just type in a task like ‘Buy
+          groceries tonight’ and tap Add to get started.
+        </p>
+      </div>
+    </section>
+    <section class="task-container">
+      <div class="add-task">
+        <input type="text" id="task-box" placeholder="Add your task here" />
+        <button class="add-btn">Add</button>
+      </div>
+      <div class="task-btn-container">
+        <button class="all-btn">All</button>
+        <button class="active-btn">Active</button>
+        <button class="completed-btn">Completed</button>
+      </div>
+      <ul id="task-list-container">
+        <!-- <li class="checked">
+          Draft Email Copy For Marketing Announcement <span>"\u00d7"</span>
+        </li>
+        <li>Read 20 Pages Of Current Book</li>
+        <li>Prepare For Tomorrow: Review Calendar And Update Tasks</li> -->
+      </ul>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

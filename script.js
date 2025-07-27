@@ -30,6 +30,12 @@ addBtn.addEventListener("click", () => {
   }
 });
 
+taskBox.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    addBtn.click();
+  }
+});
+
 filterButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     filterButtons.forEach((b) => b.classList.remove("active"));
@@ -44,16 +50,23 @@ function applyFilter() {
 
   const tasks = document.querySelectorAll("#task-list-container li");
   tasks.forEach((task) => {
+    const isChecked = task.classList.contains("checked");
+
     if (filter === "all") {
       task.style.display = "block";
+      task.classList.remove("fade-out");
     } else if (filter === "active") {
-      task.style.display = task.classList.contains("checked")
-        ? "none"
-        : "block";
-    } else if (filter === "completed") {
-      task.style.display = task.classList.contains("checked")
-        ? "block"
-        : "none";
+      if (isChecked) {
+        if (!task.classList.contains("fade-out")) {
+          task.classList.add("fade-out");
+          setTimeout(() => {
+            task.style.display = "none";
+          }, 1200); // Match animation duration
+        }
+      } else {
+        task.classList.remove("fade-out");
+        task.style.display = "block";
+      }
     }
   });
 }

@@ -16,6 +16,9 @@ h1 {
   opacity: 1;
   width: 100%;
   padding: 13px 42px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .welcome-container {
@@ -94,8 +97,6 @@ input {
 }
 
 .add-btn:hover {
-  background-color: #ff5c46;
-  color: #fff;
   transform: translateX(2px);
 }
 
@@ -126,8 +127,6 @@ input {
 }
 
 .active-btn:hover {
-  background-color: #ff8d46;
-  color: #fff9f6;
   transform: translateY(-2px);
 }
 
@@ -151,8 +150,6 @@ input {
 }
 
 .completed-btn:hover {
-  background-color: #ff8d46;
-  color: #fff9f6;
   transform: translateY(-2px);
 }
 
@@ -176,8 +173,6 @@ input {
 }
 
 .all-btn:hover {
-  background-color: #ff8d46;
-  color: #fff9f6;
   transform: translateY(-2px);
 }
 
@@ -246,4 +241,19 @@ ul li span {
 
 ul li span:hover {
   background: #ffa26633;
+}
+
+.fade-out {
+  animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
 }
